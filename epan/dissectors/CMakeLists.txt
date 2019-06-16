@@ -1446,6 +1446,7 @@ set(DISSECTOR_SRC
 	${CMAKE_CURRENT_SOURCE_DIR}/packet-netdump.c
 	${CMAKE_CURRENT_SOURCE_DIR}/packet-netgear-ensemble.c
 	${CMAKE_CURRENT_SOURCE_DIR}/packet-netflow.c
+	${CMAKE_CURRENT_SOURCE_DIR}/packet-netlink-devlink.c
 	${CMAKE_CURRENT_SOURCE_DIR}/packet-netlink-generic.c
 	${CMAKE_CURRENT_SOURCE_DIR}/packet-netlink-netfilter.c
 	${CMAKE_CURRENT_SOURCE_DIR}/packet-netlink-nl80211.c
