@@ -445,15 +445,12 @@ dissect_netlink_generic(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, voi
 
 	/* Optional user-specific message header and optional message payload. */
 	next_tvb = tvb_new_subset_remaining(tvb, offset);
-	/* Try subdissector if there is a payload. */
-	if (tvb_reported_length_remaining(tvb, offset + 4)) {
-		if (family_name) {
-			int ret;
-			/* Invoke subdissector with genlmsghdr present. */
-			ret = dissector_try_string(genl_dissector_table, family_name, next_tvb, pinfo, tree, &info);
-			if (ret) {
-				return ret;
-			}
+	if (family_name) {
+		int ret;
+		/* Invoke subdissector with genlmsghdr present. */
+		ret = dissector_try_string(genl_dissector_table, family_name, next_tvb, pinfo, tree, &info);
+		if (ret) {
+			return ret;
 		}
 	}
 
